@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Code to create table in MySQL Workbench",
   "main": "bamazonCustomer.js",
-  "dependencies": {},
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
