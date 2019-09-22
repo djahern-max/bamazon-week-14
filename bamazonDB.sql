@@ -1,43 +1,29 @@
-DROP DATABASE IF EXISTS bamazonDB;
+DROP DATABASE IF EXISTS bamazon;
 
-CREATE DATABASE bamazonDB;
+CREATE database bamazon;
 
-USE bamazonDB;
+USE bamazon;
 
-CREATE TABLE products (
-  id INT NOT NULL AUTO_INCREMENT,
-  product_name VARCHAR(45) NULL,
-  price DECIMAL(10,2) NULL,
-  stock_quantity INT NULL,
-  PRIMARY KEY (id)
+CREATE TABLE products(
+	item_id INT(4) NOT NULL,
+	product_name VARCHAR(100) NOT NULL,
+	department_name VARCHAR(100) NOT NULL,
+	price DECIMAL(10,2) NOT NULL,
+	stock_quantity INT(20) NOT NULL,
+	PRIMARY KEY (item_id)
 );
 
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Skill Saw", 184.99, 222);
+Select * FROM products;
 
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Angle Grinder", 29.99, 102);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Palm Sander", 55.15, 287);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Router Lift", 299.00, 17);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Circular Saw", 75.99, 178);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Compound Miter Saw", 179.00, 68);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Bandsaw", 1160.00, 12);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Orbital Jig Saw", 69.99, 114);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Drum Sander", 2060.00, 29);
-
-INSERT INTO products (product_name, price, stock_quantity)
-VALUES ("Reversible Air Drill", 43.95, 48);
+INSERT INTO products (item_id, product_name, department_name, price, stock_quantity) 
+VALUES 
+(101,"Skill Saw", "Woodworking", 184.99, 222),
+(265,"Angle Grinder", "Woodworking", 29.99, 102),
+(397,"Palm Sander", "Woodworking", 55.15, 287),
+(222,"Router Lift", "Woodworking", 299.00, 17),
+(897,"Circular Saw", "Woodworking", 75.99, 178),
+(542,"Compound Miter Saw", "Woodworking", 179.00, 68),
+(289,"Bandsaw", "Woodworking", 1160.00, 12),
+(564,"Orbital Jig Saw", "Woodworking", 69.99, 114),
+(558,"Drum Sander", "Woodworking", 2060.00, 29),
+(227,"Reversible Air Drill", "Woodworking", 43.95, 48)
