@@ -1,0 +1,21 @@
+{
+  "name": "bamazon-week-14",
+  "version": "1.0.0",
+  "description": "Code to create table in MySQL Workbench",
+  "main": "bamazonCustomer.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djahern-max/bamazon-week-14.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djahern-max/bamazon-week-14/issues"
+  },
+  "homepage": "https://github.com/djahern-max/bamazon-week-14#readme"
+}
