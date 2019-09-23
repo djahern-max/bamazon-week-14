@@ -59,7 +59,6 @@ function purchaseRequest() {
                 filter: Number
             },
         ]).then(function(answers) {
-            let test = answers;
             let purchaseID = answers.ID;
             let quantityToBuy = answers.Quantity;
             purchaseOrder(purchaseID, quantityToBuy)
@@ -88,7 +87,7 @@ function purchaseOrder(ID, amtNeeded) {
             function updateProduct() {
                 console.log("View product database for updated quantities following sale.....\n");
 
-                var query = connection.query(
+                connection.query(
                     "UPDATE products SET ? WHERE ?", [{
                             stock_quantity: quantityAfterSale
                         },
