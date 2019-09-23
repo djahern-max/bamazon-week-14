@@ -22,6 +22,7 @@ If there is enough quantity on hand, a function is run to update the product qua
 If there is insufficient quantity, then the following message is displayed.
 
 ![](Images/pic5.JPG)
+![](Images/pic5a.JPG)
 
 When the customer purchases an item that is in stock, the following messages are displayed.  In this instance, the customer purchased 2 drum sanders @ $2,060.00 each for a total purchase price of $4,120.00.
 
