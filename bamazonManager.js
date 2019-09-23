@@ -36,7 +36,6 @@ function displayInventory() {
             );
         }
         console.log(theDisplayTable.toString());
-        choices();
 
     });
 };
@@ -81,7 +80,6 @@ function lessThanFive() {
             }
         }
     })
-
 }
 
 function updateInventory() {
