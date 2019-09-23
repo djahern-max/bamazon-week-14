@@ -111,12 +111,3 @@ function purchaseOrder(ID, amtNeeded) {
     })
 
 }
-
-<<<<<<< HEAD
-console.log("C");
-
-console.log("D")
-
-console.log("E")
-=======
->>>>>>> 0a46cf3248c5369aabbfef28d5440ff01bf42713
