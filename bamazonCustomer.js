@@ -112,6 +112,6 @@ function purchaseOrder(ID, amtNeeded) {
 
 }
 
-console.log("test");
+console.log("A");
 
-console.log("wow");
+console.log("B");
