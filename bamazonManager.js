@@ -16,13 +16,13 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id" + connection.threadId);
 });
 
 function displayInventory() {
-    connection.query('SELECT * FROM Products', function(err, res) {
+    connection.query('SELECT * FROM Products', function (err, res) {
         if (err) {
             console.log(err)
         };
@@ -49,7 +49,7 @@ function choices() {
         type: "list",
         message: "Please select from the following list",
         choices: ["View Products", "View Low Inventory", "Add to Low Inventory", "Add a New Product"]
-    }]).then(function(answers) {
+    }]).then(function (answers) {
         switch (answers.action) {
             case "View Products":
                 displayInventory();
@@ -70,7 +70,7 @@ function choices() {
 
 function lessThanFive() {
 
-    connection.query("SELECT * FROM products", function(err, res) {
+    connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
 
         for (let i = 0; i < res.length; i++) {
@@ -90,18 +90,18 @@ function updateInventory() {
 
     inquirer
         .prompt([{
-                name: "ID",
-                type: "input",
-                message: "Enter the Item ID to update inventory quantity?",
-                filter: Number
-            },
-            {
-                name: "Quantity",
-                type: "input",
-                message: "How many units do you want to add?",
-                filter: Number
-            },
-        ]).then(function(answers) {
+            name: "ID",
+            type: "input",
+            message: "Enter the Item ID to update inventory quantity?",
+            filter: Number
+        },
+        {
+            name: "Quantity",
+            type: "input",
+            message: "How many units do you want to add?",
+            filter: Number
+        },
+        ]).then(function (answers) {
             let updateInventoryID = answers.ID;
             let quantityToUpdate = answers.Quantity;
             inventoryAdjustment(updateInventoryID, quantityToUpdate);
@@ -111,7 +111,7 @@ function updateInventory() {
 
     function inventoryAdjustment(ID, QTY) {
 
-        connection.query("Select * FROM products WHERE item_id = " + ID, function(err, res) {
+        connection.query("Select * FROM products WHERE item_id = " + ID, function (err, res) {
 
             if (err) {
                 console.log(err)
@@ -134,13 +134,13 @@ function updateInventory() {
 
                     connection.query(
                         "UPDATE products SET ? WHERE ?", [{
-                                stock_quantity: quantityAfterUpdate
-                            },
-                            {
-                                item_id: productID
-                            }
-                        ],
-                        function(err, res) {
+                            stock_quantity: quantityAfterUpdate
+                        },
+                        {
+                            item_id: productID
+                        }
+                    ],
+                        function (err, res) {
                             if (err) throw err;
                             // console.log(res.affectedRows + " products updated!\n");
 

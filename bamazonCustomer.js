@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id" + connection.threadId);
     readProducts();
@@ -24,7 +24,7 @@ connection.connect(function(err) {
 
 function readProducts() {
     console.log("Selecting all products.......\n");
-    connection.query("SELECT * FROM products", function(err, res) {
+    connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
 
         let displayTable = new Table({
@@ -47,18 +47,18 @@ function purchaseRequest() {
 
     inquirer
         .prompt([{
-                name: "ID",
-                type: "input",
-                message: "Which item would you like to purchase?",
-                filter: Number
-            },
-            {
-                name: "Quantity",
-                type: "input",
-                message: "How many items do you wish to purchase?",
-                filter: Number
-            },
-        ]).then(function(answers) {
+            name: "ID",
+            type: "input",
+            message: "Which item would you like to purchase?",
+            filter: Number
+        },
+        {
+            name: "Quantity",
+            type: "input",
+            message: "How many items do you wish to purchase?",
+            filter: Number
+        },
+        ]).then(function (answers) {
             let purchaseID = answers.ID;
             let quantityToBuy = answers.Quantity;
             purchaseOrder(purchaseID, quantityToBuy)
@@ -67,7 +67,7 @@ function purchaseRequest() {
 
 function purchaseOrder(ID, amtNeeded) {
 
-    connection.query("Select * FROM products WHERE item_id = " + ID, function(err, res) {
+    connection.query("Select * FROM products WHERE item_id = " + ID, function (err, res) {
         // console.log(res);
 
         if (err) {
@@ -89,13 +89,13 @@ function purchaseOrder(ID, amtNeeded) {
 
                 connection.query(
                     "UPDATE products SET ? WHERE ?", [{
-                            stock_quantity: quantityAfterSale
-                        },
-                        {
-                            item_id: itemID
-                        }
-                    ],
-                    function(err, res) {
+                        stock_quantity: quantityAfterSale
+                    },
+                    {
+                        item_id: itemID
+                    }
+                ],
+                    function (err, res) {
                         if (err) throw err;
                         // console.log(res.affectedRows + " products updated!\n");
 
