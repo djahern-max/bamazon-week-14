@@ -1,5 +1,7 @@
 # bamazon-week-14
 
+BAMAZON CUSTOMER VIEW:
+
 Code to create table in MySQL Workbench
 
 ![](Images/pic1.JPG)
@@ -38,4 +40,23 @@ AFTER:
 You can also see the updated quantity here:
 
 ![](Images/pic9.JPG)
+
+BAMAZON MANAGER VIEW:
+
+Lists menu options:
+
+![](Images/pic10.JPG)
+
+View products for sale:
+
+![](Images/pic11.JPG)
+
+View low inventory items (less than 5 qty):
+
+![](Images/pic12.JPG)
+
+
+
+
+
 
