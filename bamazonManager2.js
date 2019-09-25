@@ -56,6 +56,10 @@ function lessThanFive() {
     })
 }
 
+function updateInventory(){
+    
+}
+
 function choices() {
 
     inquirer.prompt([{
