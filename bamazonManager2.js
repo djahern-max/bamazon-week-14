@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
     user: "root",
 
     // Your password
-    password: "CWkeller1234!",
+    password: "",
     database: "bamazon"
 });
 
@@ -56,8 +56,8 @@ function lessThanFive() {
     })
 }
 
-function updateInventory(){
-    
+function updateInventory() {
+
 }
 
 function choices() {

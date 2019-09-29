@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
     user: "root",
 
     // Your password
-    password: "CWkeller1234!",
+    password: "",
     database: "bamazon"
 });
 
@@ -47,17 +47,17 @@ function purchaseRequest() {
 
     inquirer
         .prompt([{
-            name: "ID",
-            type: "input",
-            message: "Which item would you like to purchase?",
-            filter: Number
-        },
-        {
-            name: "Quantity",
-            type: "input",
-            message: "How many items do you wish to purchase?",
-            filter: Number
-        },
+                name: "ID",
+                type: "input",
+                message: "Which item would you like to purchase?",
+                filter: Number
+            },
+            {
+                name: "Quantity",
+                type: "input",
+                message: "How many items do you wish to purchase?",
+                filter: Number
+            },
         ]).then(function (answers) {
             let purchaseID = answers.ID;
             let quantityToBuy = answers.Quantity;
@@ -89,12 +89,12 @@ function purchaseOrder(ID, amtNeeded) {
 
                 connection.query(
                     "UPDATE products SET ? WHERE ?", [{
-                        stock_quantity: quantityAfterSale
-                    },
-                    {
-                        item_id: itemID
-                    }
-                ],
+                            stock_quantity: quantityAfterSale
+                        },
+                        {
+                            item_id: itemID
+                        }
+                    ],
                     function (err, res) {
                         if (err) throw err;
                         // console.log(res.affectedRows + " products updated!\n");
